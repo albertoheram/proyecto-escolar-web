@@ -1,0 +1,36 @@
+@font-face
+{
+	font-family: helvetica;
+	src: url (../Diseño/Fuente/HEL.ttf);
+}
+.div1
+{
+	display: inline-flex;
+	justify-content: left;
+	align-items: center;
+	
+	background-color: #ff003e;
+	font-size: 30px;
+	position: relative;
+	border-bottom-right-radius: 10px;
+}
+#fondo
+{
+	background-image: url("../Diseño/imagenes/fondo1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.titulo
+{
+	font-family: helvetica;
+	color: white;
+}
+#Tabla
+{
+	font-family: helvetica;
+	color: black;
+	background-color: white;
+	border-radius: 4px;
+	padding: 10px;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Librerías</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="Regalias.css">
+</head>
+<body id="fondo">
+	<br>
+	<br>
+	<br>
+	<br>
+	<form action="gReg.php" method="POST"  class="form">
+		<center><img src="../Diseño/imagenes/book.png" style=" width: 80px;height: 80px;border: 0;"></center>
+		<center><h1 id="t3">Regalías</h1></center>
+		<center>
+			<br><br>
+			<label class="et">Rango inicial</label> <br>
+			<input class="intext" type="number" name="rini_r" step="any" min="1" value="" required title="Completa este campo utilizando solo números" /> <br> <br>
+			<label class="et">Rango final</label> <br>
+			<input class="intext" type="number" name="rfin_r" step="any" min="1" value=""  required title="Completa este campo utilizando solo números"/><br> <br>
+			<label class="et">Regalía</label> <br>
+			<input class="intext" type="number" name="regalias" value="" step="any" min="1" value="" required title="Completa este campo utilizando solo números"/><br> <br>
+			<select name="id_titulo" id="id_titulo" required>
+			<br>
+			<br>
+			<option>Seleccione ID título</option>
+				<?php
+					$conexion = mysqli_connect("localhost","root","","librerias");
+					//$sql = "SELECT * FROM editoriales";
+					//$res = mysqli_query($conexion,$sql);
+					$sql = $conexion->query("SELECT * FROM titulos");
+					//$numreg = mysqli_num_rows($res);
+					//if ($numreg>0)
+					//{
+						while ($fila = $sql->fetch_array()) 
+						{
+							echo "<option value'".$fila['id_titulo']."'>".$fila['id_titulo']."</option>";
+						}
+					//}
+				?>	
+			</select>
+			<br>
+			<br>
+			<input type="submit" class="btn btn1" value="Enviar">
+		</center>
+	</form>
+</body>
+</html>
